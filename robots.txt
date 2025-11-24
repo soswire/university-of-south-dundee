@@ -1,0 +1,61 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.southdundee.ac.uk/sitemap.xml
+
+# Directories
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /private/
+
+# Files
+Disallow: /README.txt
+Disallow: /LICENSE.txt
+Disallow: /config.php
+Disallow: /error_log
+
+# Parameters
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?search=
+Disallow: /*?page=
+
+# Allow important pages for crawlers
+Allow: /undergraduate.html
+Allow: /postgraduate.html
+Allow: /alumni.html
+Allow: /about.html
+Allow: /staff.html
+Allow: /students.html
+Allow: /contacts.html
+
+# Crawl delay to be respectful to the server
+Crawl-delay: 2
+
+# Specific bots instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 5
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 3
