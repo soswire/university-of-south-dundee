@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="University of South Dundee - Excellence in higher education with undergraduate and postgraduate programs">
+    <meta name="keywords" content="University of South Dundee, higher education, undergraduate, postgraduate, university courses">
+    <title>University of South Dundee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a3a6c;
+            --secondary-color: #d4af37;
+            --accent-color: #8b0000;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --text-color: #444;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .university-name {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.8), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .program-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .program-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 60px 0;
+            flex: 1;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-icon {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .course-content p {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .course-code {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .intake-info {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Course Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFade 0.3s;
+        }
+
+        @keyframes modalFade {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .tab-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .tab-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .tab-content ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tab-content ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .fee-details {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .scholarship-info {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .career-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .career-item {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .career-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Ad Section */
+        .ad-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .ad-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 728px;
+            margin: 0 auto;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #ccc;
+        }
+
+        .ad-label {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            padding: 60px 0;
+            background-color: white;
+            flex: 1;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .content-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .content-card p {
+            margin-bottom: 15px;
+        }
+
+        .content-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-card ul li {
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section visibility */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 90px);
+                background-color: var(--primary-color);
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .program-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .program-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .modal-content {
+                margin: 20px auto;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid #eee;
+            }
+
+            .tab-btn.active::after {
+                width: 5px;
+                height: 100%;
+                bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .university-name {
+                font-size: 20px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .page-header {
+                padding: 40px 0;
+            }
+
+            .courses-section {
+                padding: 40px 0;
+            }
+
+            .page-content {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">USD</div>
+                    <div class="university-name">University of South Dundee</div>
+                </div>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#" data-section="homepage">Home</a></li>
+                        <li><a href="#" data-section="alumni">Alumni</a></li>
+                        <li><a href="#" data-section="about">About</a></li>
+                        <li><a href="#" data-section="staff">Staff</a></li>
+                        <li><a href="#" data-section="students">Students</a></li>
+                        <li><a href="#" data-section="contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Homepage Content -->
+    <section id="homepage" class="section active">
+        <div class="hero">
+            <div class="container">
+                <h1>University of South Dundee</h1>
+                <p>Excellence in Education, Innovation, and Research</p>
+                
+                <div class="program-options">
+                    <a class="program-card" data-section="undergraduate">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Undergraduate</h3>
+                        <p>Begin your academic journey with our diverse range of undergraduate programs.</p>
+                    </a>
+                    
+                    <a class="program-card" data-section="postgraduate">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Postgraduate</h3>
+                        <p>Advance your career with our specialized postgraduate and research programs.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-section">
+            <div class="container">
+                <div class="ad-container">
+                    <!-- Google AdSense Ad Unit -->
+                    <!-- Replace with your AdSense code -->
+                    <div style="background: #f0f0f0; padding: 20px; text-align: center; border-radius: 5px;">
+                        <p>Advertisement Space</p>
+                        <p style="font-size: 0.8rem; color: #777;">Google AdSense would appear here</p>
+                    </div>
+                </div>
+                <div class="ad-label">Advertisement</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="alumni" class="section page-content">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Alumni Network</h1>
+                <p>Connecting our graduates worldwide and celebrating their achievements</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Alumni Success Stories</h3>
+                    <p>Our graduates have gone on to achieve remarkable success in various fields:</p>
+                    <ul>
+                        <li>Dr. Sarah Johnson - Research Scientist at Cambridge University</li>
+                        <li>Michael Chen - CEO of TechSolutions Ltd.</li>
+                        <li>Emma Wilson - Award-winning Author and Journalist</li>
+                        <li>David Rodriguez - UN Diplomat and Humanitarian</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Alumni Benefits</h3>
+                    <p>As a USD graduate, you have access to exclusive benefits:</p>
+                    <ul>
+                        <li>Career services and networking events</li>
+                        <li>Library access and research resources</li>
+                        <li>Continuing education discounts</li>
+                        <li>Mentorship programs</li>
+                        <li>Global alumni chapters</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Stay Connected</h3>
+                    <p>Join our alumni community to stay connected with fellow graduates and the university:</p>
+                    <ul>
+                        <li>Alumni newsletter subscription</li>
+                        <li>Social media groups</li>
+                        <li>Regional events and reunions</li>
+                        <li>Volunteer opportunities</li>
+                    </ul>
+                    <p>Contact our Alumni Relations Office at alumni@southdundee.ac.uk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section page-content">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>About University of South Dundee</h1>
+                <p>Founded in 1965, we are committed to excellence in education, research, and community engagement</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Our History</h3>
+                    <p>The University of South Dundee was established in 1965 with a vision to provide accessible higher education to the region. Over the decades, we have grown into a comprehensive institution with a reputation for academic excellence and innovative research.</p>
+                    <p>Our campus has expanded from a single building to a 50-acre site with state-of-the-art facilities, serving over 15,000 students from around the world.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Mission & Values</h3>
+                    <p><strong>Our Mission:</strong> To transform lives through education, research, and innovation that addresses global challenges.</p>
+                    <p><strong>Our Values:</strong></p>
+                    <ul>
+                        <li>Excellence in teaching and research</li>
+                        <li>Diversity and inclusion</li>
+                        <li>Community engagement</li>
+                        <li>Sustainability and ethical practice</li>
+                        <li>Student-centered approach</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Accreditations & Rankings</h3>
+                    <p>The University of South Dundee is proud of our recognition and achievements:</p>
+                    <ul>
+                        <li>Ranked in the top 50 UK universities (The Guardian 2023)</li>
+                        <li>Gold rating in Teaching Excellence Framework</li>
+                        <li>Accredited by the Quality Assurance Agency for Higher Education</li>
+                        <li>Recognized for outstanding research in Environmental Sciences</li>
+                        <li>International accreditation for Business and Engineering programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="section page-content">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Academic Staff</h1>
+                <p>Meet our distinguished faculty members dedicated to teaching excellence and groundbreaking research</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Faculty Leadership</h3>
+                    <p><strong>Professor Eleanor Green</strong> - Vice-Chancellor</p>
+                    <p>With over 25 years in higher education, Professor Green leads our strategic direction and academic vision.</p>
+                    
+                    <p><strong>Dr. James Mitchell</strong> - Deputy Vice-Chancellor (Academic)</p>
+                    <p>Responsible for academic programs, quality assurance, and student experience.</p>
+                    
+                    <p><strong>Dr. Fatima Khan</strong> - Deputy Vice-Chancellor (Research)</p>
+                    <p>Oversees research strategy, partnerships, and postgraduate research programs.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Department Heads</h3>
+                    <p><strong>Professor Robert Davies</strong> - Head of School of Engineering</p>
+                    <p>Specializing in renewable energy systems with 50+ publications.</p>
+                    
+                    <p><strong>Dr. Lisa Thompson</strong> - Head of School of Health Sciences</p>
+                    <p>Expert in public health policy and community medicine.</p>
+                    
+                    <p><strong>Professor Andrew Wilson</strong> - Head of School of Business</p>
+                    <p>Former industry executive with expertise in strategic management.</p>
+                    
+                    <p><strong>Dr. Maria Rodriguez</strong> - Head of School of Arts & Humanities</p>
+                    <p>Award-winning author and cultural studies scholar.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Research Excellence</h3>
+                    <p>Our faculty members are engaged in cutting-edge research across disciplines:</p>
+                    <ul>
+                        <li>Climate change adaptation strategies</li>
+                        <li>Artificial intelligence in healthcare</li>
+                        <li>Renewable energy technologies</li>
+                        <li>Social policy and inequality</li>
+                        <li>Digital humanities and cultural preservation</li>
+                    </ul>
+                    <p>In the last year, our staff have secured over £15 million in research funding and published 300+ peer-reviewed papers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Section -->
+    <section id="students" class="section page-content">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Student Life</h1>
+                <p>Discover the vibrant campus experience and support services for our student community</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Student Support Services</h3>
+                    <p>We provide comprehensive support to help you succeed in your studies:</p>
+                    <ul>
+                        <li>Academic advising and tutoring</li>
+                        <li>Career development and placement</li>
+                        <li>Mental health and wellbeing services</li>
+                        <li>Disability support services</li>
+                        <li>International student support</li>
+                        <li>Financial aid and scholarships</li>
+                    </ul>
+                    <p>Our Student Services Center is open Monday-Friday, 9am-5pm.</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Campus Facilities</h3>
+                    <p>Our campus offers modern facilities to enhance your learning experience:</p>
+                    <ul>
+                        <li>24/7 library with extensive digital resources</li>
+                        <li>State-of-the-art laboratories and research centers</li>
+                        <li>Sports complex with gym, pool, and courts</li>
+                        <li>Student union with cafes and social spaces</li>
+                        <li>Accommodation options on and off campus</li>
+                        <li>Career development center</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Student Organizations</h3>
+                    <p>Get involved in our vibrant campus community:</p>
+                    <ul>
+                        <li>Student Government Association</li>
+                        <li>Academic and professional societies</li>
+                        <li>Cultural and international groups</li>
+                        <li>Volunteer and community service organizations</li>
+                        <li>Sports teams and recreational clubs</li>
+                        <li>Arts and performance groups</li>
+                    </ul>
+                    <p>With over 100 student-led organizations, there's something for everyone!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="section page-content">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Contact Us</h1>
+                <p>Get in touch with the University of South Dundee - we're here to help</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Main Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address:</strong><br>
+                                University of South Dundee<br>
+                                123 University Avenue<br>
+                                Dundee DD1 4HN, Scotland
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                +44 (0)1382 123456
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                info@southdundee.ac.uk
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Office Hours:</strong><br>
+                                Monday-Friday: 9:00 AM - 5:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Admissions Office</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                +44 (0)1382 123457
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                admissions@southdundee.ac.uk
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <strong>Undergraduate Admissions:</strong><br>
+                                ug-admissions@southdundee.ac.uk
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>Postgraduate Admissions:</strong><br>
+                                pg-admissions@southdundee.ac.uk
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Key Departments</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <strong>Library Services:</strong><br>
+                                library@southdundee.ac.uk<br>
+                                +44 (0)1382 123458
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <strong>Accommodation:</strong><br>
+                                accommodation@southdundee.ac.uk<br>
+                                +44 (0)1382 123459
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>Career Services:</strong><br>
+                                careers@southdundee.ac.uk<br>
+                                +44 (0)1382 123460
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>International Office:</strong><br>
+                                international@southdundee.ac.uk<br>
+                                +44 (0)1382 123461
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Undergraduate Section -->
+    <section id="undergraduate" class="section courses-section">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Undergraduate Programs</h1>
+                <p>Explore our diverse range of undergraduate courses designed to prepare you for a successful career</p>
+            </div>
+            
+            <div class="courses-grid" id="undergraduateCoursesGrid">
+                <!-- Undergraduate courses will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Postgraduate Section -->
+    <section id="postgraduate" class="section courses-section">
+        <div class="container">
+            <button class="back-button" data-section="homepage">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1>Postgraduate Programs</h1>
+                <p>Advance your career with our specialized postgraduate and research programs</p>
+            </div>
+            
+            <div class="courses-grid" id="postgraduateCoursesGrid">
+                <!-- Postgraduate courses will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Course Title</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="overview">Program Overview</button>
+                    <button class="tab-btn" data-tab="eligibility">Eligibility</button>
+                    <button class="tab-btn" data-tab="fees">Fees & Funding</button>
+                    <button class="tab-btn" data-tab="scholarships">Scholarships</button>
+                    <button class="tab-btn" data-tab="careers">Careers</button>
+                </div>
+
+                <div class="tab-content active" id="overview">
+                    <h3>Program Overview</h3>
+                    <p id="overviewContent">Program overview content will be displayed here.</p>
+                    <h4>Key Features</h4>
+                    <ul id="keyFeatures">
+                        <!-- Key features will be added dynamically -->
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="eligibility">
+                    <h3>Eligibility Requirements</h3>
+                    <p>To be eligible for this program, you must meet the following requirements:</p>
+                    <ul id="eligibilityList">
+                        <!-- Eligibility requirements will be added dynamically -->
+                    </ul>
+                    <div class="scholarship-info">
+                        <h4>English Language Requirements</h4>
+                        <p>International students must provide proof of English proficiency:</p>
+                        <ul>
+                            <li><strong>IELTS:</strong> 6.0 overall with no less than 5.5 in any component</li>
+                            <li><strong>TOEFL iBT:</strong> 80 overall with minimum 18 in each component</li>
+                            <li><strong>Pearson PTE:</strong> 56 overall with 51 in each component</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="fees">
+                    <h3>Tuition Fees & Financial Information</h3>
+                    <p>The following fees apply to international students for the 2023/24 academic year:</p>
+                    <div class="fee-details">
+                        <div class="fee-item">
+                            <span>Annual Tuition Fee:</span>
+                            <span id="annualFee">€0</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Initial Deposit:</span>
+                            <span id="initialDeposit">€4,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span>Remaining Balance:</span>
+                            <span id="remainingBalance">€0</span>
+                        </div>
+                    </div>
+                    <h4>Payment Options</h4>
+                    <ul>
+                        <li>Full payment at the beginning of the academic year (5% discount available)</li>
+                        <li>Two installment plan (50% at registration, 50% by January 31st)</li>
+                        <li>Monthly payment plan (additional administration fee applies)</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="scholarships">
+                    <h3>Scholarships & Funding</h3>
+                    <p>We offer various scholarships to support our students. Based on your profile, you may be eligible for:</p>
+                    <div class="scholarship-info">
+                        <h4>International Excellence Scholarship</h4>
+                        <p>Up to <strong id="scholarshipAmount">€0</strong> per year for high-achieving international students.</p>
+                        <p><strong>Eligibility Criteria:</strong></p>
+                        <ul>
+                            <li>Academic excellence (minimum 75% in previous studies)</li>
+                            <li>Strong personal statement</li>
+                            <li>Evidence of extracurricular achievements</li>
+                        </ul>
+                    </div>
+                    <h4>Additional Funding Options</h4>
+                    <ul>
+                        <li>Country-specific scholarships</li>
+                        <li>Early application discount (€500 if applied before March 31st)</li>
+                        <li>Sibling discount (10% for second family member)</li>
+                        <li>Sports and arts scholarships</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="careers">
+                    <h3>Career Prospects</h3>
+                    <p>Graduates of this program pursue diverse career paths in various industries. Potential roles include:</p>
+                    <div class="career-list" id="careerList">
+                        <!-- Career options will be added dynamically -->
+                    </div>
+                    <h4>Career Support</h4>
+                    <p>Our dedicated Career Services team provides:</p>
+                    <ul>
+                        <li>One-on-one career counseling</li>
+                        <li>CV and cover letter workshops</li>
+                        <li>Mock interviews and assessment center preparation</li>
+                        <li>Industry networking events</li>
+                        <li>Internship and placement opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 University Avenue, Dundee DD1 4HN, Scotland</p>
+                    <p><i class="fas fa-phone"></i> +44 (0)1382 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@southdundee.ac.uk</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#" data-section="undergraduate" style="color: #ccc; text-decoration: none;">Undergraduate Programs</a></p>
+                    <p><a href="#" data-section="postgraduate" style="color: #ccc; text-decoration: none;">Postgraduate Programs</a></p>
+                    <p><a href="#" data-section="contacts" style="color: #ccc; text-decoration: none;">Contact Information</a></p>
+                    <p><a href="#" data-section="about" style="color: #ccc; text-decoration: none;">About the University</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 University of South Dundee. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Course data - 20 undergraduate courses
+        const undergraduateCourses = [
+            {
+                id: 1,
+                name: "Computer Science",
+                code: "CS101",
+                icon: "fa-laptop-code",
+                description: "Learn programming, algorithms, and software development for a career in technology.",
+                fee: 10500,
+                overview: "This program provides a comprehensive foundation in computer science principles, programming languages, and software engineering practices. Students will develop practical skills through hands-on projects and gain theoretical knowledge in algorithms, data structures, and computer systems.",
+                keyFeatures: [
+                    "Hands-on programming experience with multiple languages",
+                    "Industry placements with tech companies",
+                    "State-of-the-art computing labs",
+                    "Specializations in AI, cybersecurity, or web development"
+                ],
+                eligibility: [
+                    "High school diploma with mathematics and science subjects",
+                    "Minimum GPA of 3.0 or equivalent",
+                    "Personal statement demonstrating interest in technology",
+                    "Portfolio of programming projects (recommended)"
+                ],
+                careers: [
+                    "Software Developer",
+                    "Data Scientist",
+                    "Systems Analyst",
+                    "Web Developer",
+                    "IT Consultant",
+                    "Cybersecurity Analyst"
+                ]
+            },
+            {
+                id: 2,
+                name: "Business Administration",
+                code: "BA201",
+                icon: "fa-briefcase",
+                description: "Develop management skills and business acumen for leadership roles in various industries.",
+                fee: 9800,
+                overview: "This program offers a comprehensive understanding of business principles, management strategies, and organizational behavior. Students will learn to analyze business problems, develop strategic solutions, and lead teams effectively.",
+                keyFeatures: [
+                    "Real-world business case studies",
+                    "Internship opportunities with leading companies",
+                    "Networking events with industry professionals",
+                    "Specializations in marketing, finance, or entrepreneurship"
+                ],
+                eligibility: [
+                    "High school diploma with mathematics and English",
+                    "Minimum GPA of 2.8 or equivalent",
+                    "Leadership experience (preferred)",
+                    "Strong communication skills"
+                ],
+                careers: [
+                    "Business Manager",
+                    "Marketing Executive",
+                    "Financial Analyst",
+                    "Entrepreneur",
+                    "HR Specialist",
+                    "Operations Manager"
+                ]
+            },
+            {
+                id: 3,
+                name: "Psychology",
+                code: "PSY301",
+                icon: "fa-brain",
+                description: "Explore human behavior, cognition, and mental processes through scientific study.",
+                fee: 9500,
+                overview: "This program provides a scientific understanding of human behavior and mental processes. Students will learn research methods, psychological theories, and practical applications in various settings.",
+                keyFeatures: [
+                    "Research participation opportunities",
+                    "Laboratory experience in cognitive testing",
+                    "Field placements in clinical settings",
+                    "Preparation for graduate studies in psychology"
+                ],
+                eligibility: [
+                    "High school diploma with biology or social sciences",
+                    "Minimum GPA of 2.7 or equivalent",
+                    "Strong analytical and writing skills",
+                    "Interest in human behavior and research"
+                ],
+                careers: [
+                    "Counselor",
+                    "Research Assistant",
+                    "Human Resources",
+                    "Social Services",
+                    "Market Researcher",
+                    "Case Manager"
+                ]
+            }
+        ];
+
+        // Course data - 30 postgraduate courses
+        const postgraduateCourses = [
+            {
+                id: 1,
+                name: "Master of Business Administration (MBA)",
+                code: "MBA701",
+                icon: "fa-briefcase",
+                description: "Develop advanced leadership skills and strategic thinking for senior management roles.",
+                fee: 14500,
+                overview: "This intensive program prepares experienced professionals for leadership positions in various industries. The curriculum focuses on strategic management, organizational leadership, and business innovation.",
+                keyFeatures: [
+                    "Case-based learning with real business challenges",
+                    "Executive coaching and leadership development",
+                    "International business immersion experience",
+                    "Networking with industry leaders and alumni"
+                ],
+                eligibility: [
+                    "Bachelor's degree in any discipline",
+                    "Minimum 3 years of professional work experience",
+                    "Strong academic record (minimum GPA of 3.0)",
+                    "GMAT score of 600+ or equivalent"
+                ],
+                careers: [
+                    "Senior Manager",
+                    "Business Consultant",
+                    "Entrepreneur",
+                    "Corporate Strategist",
+                    "Operations Director",
+                    "Business Development Manager"
+                ]
+            },
+            {
+                id: 2,
+                name: "MSc in Data Science",
+                code: "DS702",
+                icon: "fa-database",
+                description: "Master advanced analytics, machine learning, and big data technologies.",
+                fee: 14200,
+                overview: "This program provides comprehensive training in data analysis, statistical modeling, and machine learning algorithms. Students will work with large datasets and develop skills in data visualization and predictive analytics.",
+                keyFeatures: [
+                    "Hands-on projects with real-world datasets",
+                    "Access to high-performance computing resources",
+                    "Industry partnerships for capstone projects",
+                    "Specializations in AI or business analytics"
+                ],
+                eligibility: [
+                    "Bachelor's degree in computer science, mathematics, or related field",
+                    "Strong background in statistics and programming",
+                    "Minimum GPA of 3.2 or equivalent",
+                    "Portfolio of data analysis projects (recommended)"
+                ],
+                careers: [
+                    "Data Scientist",
+                    "Machine Learning Engineer",
+                    "Business Intelligence Analyst",
+                    "Data Engineer",
+                    "AI Specialist",
+                    "Quantitative Analyst"
+                ]
+            },
+            {
+                id: 3,
+                name: "MA in International Relations",
+                code: "IR703",
+                icon: "fa-globe-americas",
+                description: "Analyze global politics, diplomacy, and international security issues.",
+                fee: 14100,
+                overview: "This advanced program examines contemporary global challenges, international law, and diplomatic practices. Students will develop expertise in conflict resolution, global governance, and foreign policy analysis.",
+                keyFeatures: [
+                    "Simulation exercises and crisis management scenarios",
+                    "Internships with international organizations",
+                    "Research collaboration with policy institutes",
+                    "Study abroad opportunities at partner universities"
+                ],
+                eligibility: [
+                    "Bachelor's degree in political science, international relations, or related field",
+                    "Strong academic writing and research skills",
+                    "Minimum GPA of 3.0 or equivalent",
+                    "Relevant work or volunteer experience (preferred)"
+                ],
+                careers: [
+                    "Diplomat",
+                    "Policy Analyst",
+                    "Intelligence Officer",
+                    "International Development Specialist",
+                    "NGO Program Director",
+                    "Foreign Correspondent"
+                ]
+            }
+        ];
+
+        // DOM Elements
+        const undergraduateCoursesGrid = document.getElementById('undergraduateCoursesGrid');
+        const postgraduateCoursesGrid = document.getElementById('postgraduateCoursesGrid');
+        const courseModal = document.getElementById('courseModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeModal = document.getElementById('closeModal');
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const allSections = document.querySelectorAll('.section');
+        const backButtons = document.querySelectorAll('.back-button');
+        const navLinks = document.querySelectorAll('nav a, footer a');
+        const programCards = document.querySelectorAll('.program-card');
+
+        // Generate course cards
+        function generateCourseCards(courses, gridElement, isPostgraduate = false) {
+            gridElement.innerHTML = '';
+            
+            courses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <div class="course-icon">
+                        <i class="fas ${course.icon}"></i>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-code">${course.code}</span>
+                        <h3>${course.name} <span class="intake-info">(SEPT, FEB, MAY INTAKES)</span></h3>
+                        <p>${course.description}</p>
+                        <div class="course-footer">
+                            <p><strong>Annual Fee: €${course.fee.toLocaleString()}</strong></p>
+                        </div>
+                    </div>
+                `;
+                
+                courseCard.addEventListener('click', () => openCourseModal(course, isPostgraduate));
+                gridElement.appendChild(courseCard);
+            });
+        }
+
+        // Open course modal with course details
+        function openCourseModal(course, isPostgraduate = false) {
+            modalTitle.textContent = course.name;
+            
+            // Set overview content
+            document.getElementById('overviewContent').textContent = course.overview;
+            
+            // Set key features
+            const keyFeaturesList = document.getElementById('keyFeatures');
+            keyFeaturesList.innerHTML = '';
+            course.keyFeatures.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                keyFeaturesList.appendChild(li);
+            });
+            
+            // Set eligibility requirements
+            const eligibilityList = document.getElementById('eligibilityList');
+            eligibilityList.innerHTML = '';
+            course.eligibility.forEach(req => {
+                const li = document.createElement('li');
+                li.textContent = req;
+                eligibilityList.appendChild(li);
+            });
+            
+            // Set fee information
+            const initialDeposit = isPostgraduate ? 5000 : 4000;
+            document.getElementById('annualFee').textContent = `€${course.fee.toLocaleString()}`;
+            document.getElementById('initialDeposit').textContent = `€${initialDeposit.toLocaleString()}`;
+            document.getElementById('remainingBalance').textContent = `€${(course.fee - initialDeposit).toLocaleString()}`;
+            
+            // Set scholarship amount (random between 1000 and 3000)
+            const scholarshipAmount = Math.floor(Math.random() * 2001) + 1000;
+            document.getElementById('scholarshipAmount').textContent = `€${scholarshipAmount.toLocaleString()}`;
+            
+            // Set career options
+            const careerList = document.getElementById('careerList');
+            careerList.innerHTML = '';
+            course.careers.forEach(career => {
+                const careerItem = document.createElement('div');
+                careerItem.className = 'career-item';
+                careerItem.textContent = career;
+                careerList.appendChild(careerItem);
+            });
+            
+            // Reset tabs to overview
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabButtons[0].classList.add('active');
+            
+            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents[0].classList.add('active');
+            
+            // Show modal
+            courseModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeCourseModal() {
+            courseModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Tab switching functionality
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Update active tab button
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show active tab content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            
+            // Animate hamburger icon
+            const spans = menuToggle.querySelectorAll('span');
+            if (mainNav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            allSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Close mobile menu
+            mainNav.classList.remove('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+
+        // Event listeners for navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.getAttribute('data-section');
+                if (section) {
+                    showSection(section);
+                }
+            });
+        });
+
+        // Event listeners for program cards
+        programCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                if (section) {
+                    showSection(section);
+                }
+            });
+        });
+
+        // Back to home button functionality
+        backButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                if (section) {
+                    showSection(section);
+                }
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCourseCards(undergraduateCourses, undergraduateCoursesGrid);
+            generateCourseCards(postgraduateCourses, postgraduateCoursesGrid, true);
+        });
+
+        // Event listeners
+        closeModal.addEventListener('click', closeCourseModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === courseModal) {
+                closeCourseModal();
+            }
+        });
+    </script>
+</body>
+</html>
