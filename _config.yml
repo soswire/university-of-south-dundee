@@ -1,8 +1,0 @@
-title: "University of South Dundee"
-description: University of South Dundee"
-remote_theme: pages-themes/minima@v0.2.0
-plugins:
-  - jekyll-remote-theme
-
-# Optional additional settings
-github_username: soswire 
