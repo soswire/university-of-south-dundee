@@ -1,86 +1,100 @@
-# university-of-south-dundee # University of South Dundee - Official Website
+# University of South Dundee
 
-![University of South Dundee](https://img.shields.io/badge/University-South%20Dundee-blue)
-![Responsive Design](https://img.shields.io/badge/Design-Responsive-green)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![University of South Dundee](https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80)
 
-## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Website Structure](#website-structure)
-- [Installation & Setup](#installation--setup)
-- [File Structure](#file-structure)
-- [SEO Optimization](#seo-optimization)
-- [Browser Support](#browser-support)
-- [Contributing](#contributing)
-- [License](#license)
+## About
+The University of South Dundee is a prestigious higher education institution committed to excellence in education, research, and community engagement. Founded in 1965, we provide world-class undergraduate and postgraduate programs to students from around the globe.
 
-## 🎯 Overview
+## 🎓 Academic Programs
 
-The University of South Dundee official website is a modern, responsive web platform designed to showcase the university's academic programs, campus life, and community engagement. Built with pure HTML, CSS, and JavaScript, the website provides an intuitive user experience across all devices.
+### Undergraduate Programs
+- **Computer Science** (CS101) - Learn programming, algorithms, and software development
+- **Business Administration** (BA201) - Develop management skills and business acumen
+- **Psychology** (PSY301) - Explore human behavior and mental processes
+- And many more...
 
-**Live Demo:** [https://www.southdundee.ac.uk](https://www.southdundee.ac.uk)
+### Postgraduate Programs
+- **Master of Business Administration (MBA)** - Advanced leadership and strategic thinking
+- **MSc in Data Science** - Master analytics and machine learning
+- **MA in International Relations** - Analyze global politics and diplomacy
+- And specialized research programs...
 
-## ✨ Features
+## 📁 Project Structure
 
-### 🎨 Design & User Experience
-- **Fully Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX** - Clean, professional interface with university branding
-- **Accessibility** - WCAG compliant with proper contrast ratios and keyboard navigation
-- **Fast Loading** - Optimized performance with minimal dependencies
-- **Cross-browser Compatibility** - Works seamlessly across all modern browsers
+```
+university-of-south-dundee/
+│
+├── index.html                 # Main website file
+├── sitemap.xml               # SEO sitemap for search engines
+├── README.md                 # Project documentation
+│
+└── assets/                   # Static assets (if any)
+    ├── images/
+    └── css/
+```
 
-### 📱 Responsive Features
-- Mobile-first approach with progressive enhancement
-- Hamburger menu for mobile navigation
-- Flexible grid layouts that adapt to screen size
-- Optimized typography and spacing for different devices
-- Touch-friendly interface elements
+## 🚀 Features
 
-### 🎓 Academic Programs
-- **Undergraduate Programs** - 20+ courses with detailed information
-- **Postgraduate Programs** - 30+ advanced degrees and research programs
-- **Course Details** - Interactive modals with comprehensive program information
-- **Intake Information** - Multiple intake periods (September, February, May)
+- **Responsive Design** - Works on all devices (desktop, tablet, mobile)
+- **Modern UI/UX** - Clean, professional interface with smooth animations
+- **Program Information** - Detailed course descriptions and requirements
+- **Faculty Directory** - Information about academic staff and leadership
+- **Student Resources** - Campus life and support services
+- **Contact Information** - Easy access to university departments
 
-### 🔧 Technical Features
-- Pure HTML5, CSS3, and vanilla JavaScript
-- No external frameworks or libraries required
-- SEO-optimized structure and meta tags
-- Google AdSense integration ready
-- Social media integration
-- Contact forms and information
+## 🛠️ Technologies Used
 
-## 🌐 Website Structure
+- **HTML5** - Semantic markup and structure
+- **CSS3** - Modern styling with CSS variables and Flexbox/Grid
+- **JavaScript** - Interactive features and dynamic content
+- **Font Awesome** - Professional icons
+- **Google Fonts** - Typography
 
-### Main Sections
-1. **Homepage** - University overview and program selection
-2. **Undergraduate** - Bachelor's degree programs and courses
-3. **Postgraduate** - Master's and PhD programs
-4. **About** - University history, mission, and values
-5. **Staff** - Faculty members and research excellence
-6. **Students** - Campus life and support services
-7. **Alumni** - Graduate network and success stories
-8. **Contacts** - University contact information
+## 🌐 Live Website
 
-### Course Information System
-Each course features a detailed modal with:
-- Program overview and key features
-- Eligibility requirements (including IELTS 6.0)
-- Tuition fees and payment options
-- Scholarship opportunities
-- Career prospects and support
+Visit the live website: [https://soswire.github.io/university-of-south-dundee/](https://soswire.github.io/university-of-south-dundee/)
 
-## 🚀 Installation & Setup
+## 📞 Contact Information
 
-### Prerequisites
-- Web server (Apache, Nginx, or any hosting service)
-- Modern web browser
-- Text editor for customization
+**Main Campus:**
+- Address: 123 University Avenue, Dundee DD1 4HN, Scotland
+- Phone: +44 (0)1382 123456
+- Email: info@southdundee.ac.uk
 
-### Quick Start
-1. **Download the files**
-   ```bash
-   git clone https://github.com/southdundee/university-website.git
+**Admissions:**
+- Undergraduate: ug-admissions@southdundee.ac.uk
+- Postgraduate: pg-admissions@southdundee.ac.uk
+
+## 🗓️ Intake Periods
+- **September Intake** - Main academic year start
+- **February Intake** - Secondary intake for select programs
+- **May Intake** - Special summer programs
+
+## 💰 Scholarships & Funding
+We offer various scholarships including:
+- International Excellence Scholarship
+- Country-specific scholarships
+- Early application discounts
+- Sports and arts scholarships
+
+## 🤝 Contributing
+This is a static website project for the University of South Dundee. For updates or modifications, please contact the web development team.
+
+## 📄 License
+This project is for educational and demonstration purposes as part of the University of South Dundee's online presence.
+
+## 🔗 Useful Links
+
+- [Undergraduate Programs](#)
+- [Postgraduate Programs](#)
+- [About University](#)
+- [Alumni Network](#)
+- [Academic Staff](#)
+- [Student Life](#)
+- [Contact Us](#)
+
+---
+
+*University of South Dundee - Excellence in Education, Innovation, and Research*
+
+*© 2024 University of South Dundee. All Rights Reserved.*
