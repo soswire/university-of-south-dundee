@@ -1,3 +1,7 @@
 title: "University of South Dundee"
 description: "Your site description"
-theme: Cayman
+theme: minima  # This is a default theme
+
+# Optional: Build settings
+markdown: kramdown
+permalink: pretty
